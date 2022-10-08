@@ -47,7 +47,6 @@ router.post(
                     .status(400)
                     .json({ success: false, msg: 'User is not registered.' });
             }
-
             const isMatch = await bcrypt.compare(password, user.password);
 
             if (!isMatch) {
@@ -55,8 +54,6 @@ router.post(
                     .status(400)
                     .json({ success: false, msg: 'Incorrect Password' });
             }
-
-         
 
             const payload = {
                 user: {
@@ -84,7 +81,7 @@ router.post(
 
 // Register a user
 router.post(
-    '/',
+    '/register',
     [
         check('name', 'Please enter a name.').not().isEmpty(),
         check('email', 'Please enter a valid email address.').isEmail(),
@@ -142,11 +139,12 @@ router.post(
                     msg: 'Please choose a different username.',
                 });
             }
-
+            const salt = await bcrypt.genSalt(10);
+            const hashpassword = await bcrypt.hash(password, salt);
             user = new User({
                 name,
                 email,
-                password,
+                password: hashpassword,
                 regno,
                 username,
                 college,

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-//manual add
+//hardcode using this in DB for Marena
 router.post('/add', async (req, res) => {
     const facility = new Facility({
         name: req.body.name,

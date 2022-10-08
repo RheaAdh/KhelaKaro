@@ -3,8 +3,8 @@ const Facility = require('./Facility');
 const User = require('./User');
 
 const BookingSchema = mongoose.Schema({
-    user: User,
-    facility: Facility,
+    user: { type: mongoose.Types.ObjectId, ref: 'User' },
+    facility: { type: mongoose.Types.ObjectId, ref: 'Facility' },
     startTime: Date,
     endTime: Date,
 });

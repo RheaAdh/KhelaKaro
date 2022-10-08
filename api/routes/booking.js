@@ -5,9 +5,9 @@ const Facility = require('../models/Facility');
 const router = express.Router();
 
 //book now
-router.post('/', isLoggedIn, async (req, res) => {
+router.post('/:id', isLoggedIn, async (req, res) => {
     //if already booked for that time slot and facility we dont allow
-    const chosenFacility = req.body.facility;
+    const chosenFacility = req.params.id;
     const chosenStartDate = req.body.startdate;
     const chosenEndDate = req.body.enddate;
     try {
@@ -15,6 +15,7 @@ router.post('/', isLoggedIn, async (req, res) => {
         const bookings = await Booking.find({
             facility: chosenFacility,
         });
+
         let booked = 0;
         for (let i = 0; i < bookings.length; i++) {
             if (
@@ -30,16 +31,18 @@ router.post('/', isLoggedIn, async (req, res) => {
         if (booked == facility.count) {
             res.json({
                 success: true,
-                msg: 'cant book',
+                msg: 'cannot book as all are occupied',
             });
         } else {
             //allow booking
             const newBooking = new Booking({
                 startdate: chosenStartDate,
                 enddate: chosenEndDate,
-                user: req.user,
+                user: req.user._id,
                 facility: chosenFacility,
             });
+            facility.count += 1;
+            await facility.save();
             await newBooking.save();
             res.json({
                 success: true,

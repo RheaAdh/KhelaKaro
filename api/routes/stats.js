@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const Booking = requrie('../models/Booking');
 
 router.get('/consistency', async (req, res) => {
     //no.of active days send for all months and u can navigate thru diff months of the year and see calender
+    
 });
 
 router.get('/popularity', (req, res) => {
