@@ -15,38 +15,45 @@ router.post('/:id', isLoggedIn, async (req, res) => {
         const bookings = await Booking.find({
             facility: chosenFacility,
         });
-
-        let booked = 0;
+        let countOfCourtsBooked = 0;
+        var occupied = new Set();
         for (let i = 0; i < bookings.length; i++) {
-            if (
-                (chosenStartDate >= bookings[i].startdate &&
-                    chosenStartDate <= bookings[i].enddate) ||
-                (chosenEndDate >= bookings[i].startdate &&
-                    chosenEndDate <= bookings[i].enddate)
-            ) {
-                booked++;
-                break;
+            let start = bookings[i].startDateTime;
+            let end = bookings[i].endDateTime;
+            if (!(chosenStartDate >= end || chosenEndDate <= start)) {
+                countOfCourtsBooked++;
+                occupied.add(bookings[i].courtNumber);
+                if (countOfCourtsBooked == facility.count) {
+                    break;
+                }
             }
         }
-        if (booked == facility.count) {
+        if (countOfCourtsBooked == facility.count) {
             res.json({
                 success: true,
-                msg: 'cannot book as all are occupied',
+                msg: 'Cannot book as all are occupied',
             });
         } else {
+            let bookCourtNumber = 0;
+            for (let i = 1; i <= facility.count; i++) {
+                if (occupied.find(i) != occupied.end()) {
+                    bookCourtNumber = i;
+                    break;
+                }
+            }
             //allow booking
             const newBooking = new Booking({
-                startdate: chosenStartDate,
-                enddate: chosenEndDate,
+                startDateTime: start,
+                endDateTime: end,
                 user: req.user._id,
                 facility: chosenFacility,
+                courtNumber: bookCourtNumber,
             });
-            facility.count += 1;
-            await facility.save();
+
             await newBooking.save();
             res.json({
                 success: true,
-                msg: 'booked successfully.',
+                msg: 'Booked successfully.',
             });
         }
     } catch (err) {
@@ -54,9 +61,5 @@ router.post('/:id', isLoggedIn, async (req, res) => {
         res.status(500).json({ success: false, msg: 'Server Error' });
     }
 });
-
-//edit booking
-
-//cancel booking
 
 module.exports = router;
