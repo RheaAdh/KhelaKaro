@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class RegisterViewController: UIViewController {
 
     @IBOutlet var firstName: UITextField!
@@ -21,10 +23,45 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
-    func register(firstName: String,lastName:String,email:String, password:String, contactNumber:String, rePassword:String){
-        //register new user
+    func handleTap(gestureRecognizer: UIGestureRecognizer) {
+        let storyboard = UIStoryboard(name: "LoginViewController", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("next")
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+    func register(firstName: String,lastName:String,email:String, password:String, contactNumber:String){
+       guard let url =  URL(string:"http://localhost:5000/api/auth/register")
+       else{
+           return
         }
+       let body: [String: Any] = [
+        "firstName": firstName,
+        "lastName": lastName,
+        "password":password,
+        "contactNumber":contactNumber,
+        "email":email
+        ]
+       let finalBody = try? JSONSerialization.data(withJSONObject: body)
+       var request = URLRequest(url: url)
+       request.httpMethod = "POST"
+       request.httpBody = finalBody
+       
+       request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+       URLSession.shared.dataTask(with: request){
+           (data, response, error) in
+           print(response as Any)
+           if let error = error {
+               print(error)
+               return
+           }
+           guard let data = data else{
+                let gestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap:")
+                label.addGestureRecognizer(gestureRecognizer)
+               return
+           }
+           print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")
+           
+       }.resume()
+    }
     
     @IBAction func registerPressed(_ sender: Any) {
         if rePassword.text != password.text{
@@ -37,7 +74,7 @@ class RegisterViewController: UIViewController {
         }
         else{
             
-            register(firstName: firstName.text!, lastName: lastName.text!, email: email.text!, password: password.text!, contactNumber: contactNumber.text!, rePassword: rePassword.text!)
+            register(firstName: firstName.text!, lastName: lastName.text!, email: email.text!, password: password.text!, contactNumber: contactNumber.text!)
             
         }
         

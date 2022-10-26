@@ -3,7 +3,11 @@ const crypto = require('crypto');
 const bcrypt = require('bcrypt');
 
 const UserSchema = mongoose.Schema({
-    name: {
+    firstName: {
+        type: String,
+        required: true,
+    },
+    lastName:{
         type: String,
         required: true,
     },
@@ -16,20 +20,7 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-    regno: {
-        type: String,
-        required: true,
-    },
-    username: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    college: {
-        type: String,
-        required: true,
-    },
-    phoneNo: {
+    contactNumber: {
         type: String,
         //required: true
     },

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C71F3AD290928E400350955 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C71F3AC290928E400350955 /* LoginViewController.swift */; };
 		2C7D59FA28F14A56001A36CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D59F928F14A56001A36CD /* AppDelegate.swift */; };
 		2C7D59FC28F14A56001A36CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D59FB28F14A56001A36CD /* SceneDelegate.swift */; };
 		2C7D59FE28F14A56001A36CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D59FD28F14A56001A36CD /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C71F3AC290928E400350955 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2C7D59F628F14A56001A36CD /* Khela Karo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Khela Karo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7D59F928F14A56001A36CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C7D59FB28F14A56001A36CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				2C7D5A0728F14A58001A36CD /* Info.plist */,
 				6FF7421229057EB200153B70 /* RegisterViewController.swift */,
 				6FF7421429057F8C00153B70 /* SportList.swift */,
+				2C71F3AC290928E400350955 /* LoginViewController.swift */,
 			);
 			path = "Khela Karo";
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C71F3AD290928E400350955 /* LoginViewController.swift in Sources */,
 				2C7D59FE28F14A56001A36CD /* ViewController.swift in Sources */,
 				2C7D59FA28F14A56001A36CD /* AppDelegate.swift in Sources */,
 				6FF7421529057F8C00153B70 /* SportList.swift in Sources */,
