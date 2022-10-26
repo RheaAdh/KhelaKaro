@@ -23,11 +23,7 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    func handleTap(gestureRecognizer: UIGestureRecognizer) {
-        let storyboard = UIStoryboard(name: "LoginViewController", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("next")
-        self.presentViewController(vc, animated: true, completion: nil)
-    }
+
     func register(firstName: String,lastName:String,email:String, password:String, contactNumber:String){
        guard let url =  URL(string:"http://localhost:5000/api/auth/register")
        else{
@@ -54,8 +50,6 @@ class RegisterViewController: UIViewController {
                return
            }
            guard let data = data else{
-                let gestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap:")
-                label.addGestureRecognizer(gestureRecognizer)
                return
            }
            print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")

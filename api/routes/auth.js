@@ -65,13 +65,7 @@ router.post(
                 expiresIn: '720h',
             });
 
-            res.json({
-                success: true,
-                msg: 'User successfully logged in!',
-                data: {
-                    token: token,
-                },
-            });
+            res.json(token);
         } catch (err) {
             console.log(`Error : ${err.message}`);
             res.status(500).json({ success: false, msg: 'Server Error' });
