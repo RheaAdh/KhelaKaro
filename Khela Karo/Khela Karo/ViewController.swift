@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hidesKeyboard()
         // Do any additional setup after loading the view.
     }
     
@@ -36,5 +37,17 @@ class ViewController: UIViewController {
     
     
    
+}
+
+extension UIViewController{
+    func hidesKeyboard(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
+    }
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
+    }
 }
 

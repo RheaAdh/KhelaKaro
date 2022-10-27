@@ -21,6 +21,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hidesKeyboard()
         // Do any additional setup after loading the view.
     }
 
