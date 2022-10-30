@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C71F3AD290928E400350955 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C71F3AC290928E400350955 /* LoginViewModel.swift */; };
-		2C71F3AF290930D000350955 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C71F3AE290930D000350955 /* WebService.swift */; };
+		1DDE41597805BB0312C3B48B /* Pods_Khela_Karo_Khela_KaroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3876ABDCA365527FA6F2F90 /* Pods_Khela_Karo_Khela_KaroUITests.framework */; };
 		2C7D59FA28F14A56001A36CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D59F928F14A56001A36CD /* AppDelegate.swift */; };
 		2C7D59FC28F14A56001A36CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D59FB28F14A56001A36CD /* SceneDelegate.swift */; };
 		2C7D59FE28F14A56001A36CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D59FD28F14A56001A36CD /* ViewController.swift */; };
@@ -20,8 +19,13 @@
 		6836BD22290EA6AC0014688A /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6836BD21290EA6AC0014688A /* ShadowView.swift */; };
 		6862CF55290C14BC0070E5A0 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6862CF54290C14BC0070E5A0 /* ViewExtensions.swift */; };
 		6862CF57290C18B40070E5A0 /* SportCardStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6862CF56290C18B40070E5A0 /* SportCardStruct.swift */; };
+		6C167791C017CC1FA785B03E /* Pods_Khela_Karo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE290821A745610F964B0623 /* Pods_Khela_Karo.framework */; };
+		6F110E08290EBFCD00A09B68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F110E07290EBFCD00A09B68 /* GoogleService-Info.plist */; };
+		6F110E09290EBFCD00A09B68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F110E07290EBFCD00A09B68 /* GoogleService-Info.plist */; };
+		6F110E0A290EBFCD00A09B68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F110E07290EBFCD00A09B68 /* GoogleService-Info.plist */; };
 		6FF7421329057EB200153B70 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF7421229057EB200153B70 /* RegisterViewController.swift */; };
 		6FF7421529057F8C00153B70 /* SportList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF7421429057F8C00153B70 /* SportList.swift */; };
+		CE6F8F8FD06377A66888537A /* Pods_Khela_KaroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E259C2369F8195C6557E157 /* Pods_Khela_KaroTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +46,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2C71F3AC290928E400350955 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		2C71F3AE290930D000350955 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		2C7D59F628F14A56001A36CD /* Khela Karo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Khela Karo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7D59F928F14A56001A36CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C7D59FB28F14A56001A36CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,11 +60,21 @@
 		2C7D5A1728F14A58001A36CD /* Khela KaroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Khela KaroUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7D5A1B28F14A58001A36CD /* Khela_KaroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Khela_KaroUITests.swift; sourceTree = "<group>"; };
 		2C7D5A1D28F14A58001A36CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3804C3F52A412E8722E5634B /* Pods-Khela Karo-Khela KaroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Khela Karo-Khela KaroUITests.release.xcconfig"; path = "Target Support Files/Pods-Khela Karo-Khela KaroUITests/Pods-Khela Karo-Khela KaroUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5E259C2369F8195C6557E157 /* Pods_Khela_KaroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Khela_KaroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6836BD21290EA6AC0014688A /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		6862CF54290C14BC0070E5A0 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		6862CF56290C18B40070E5A0 /* SportCardStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportCardStruct.swift; sourceTree = "<group>"; };
+		6F110E07290EBFCD00A09B68 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6F15FC60C2659497D7FA32A3 /* Pods-Khela KaroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Khela KaroTests.debug.xcconfig"; path = "Target Support Files/Pods-Khela KaroTests/Pods-Khela KaroTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6FF7421229057EB200153B70 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6FF7421429057F8C00153B70 /* SportList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportList.swift; sourceTree = "<group>"; };
+		8EEA24E374FB6974173B838E /* Pods-Khela KaroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Khela KaroTests.release.xcconfig"; path = "Target Support Files/Pods-Khela KaroTests/Pods-Khela KaroTests.release.xcconfig"; sourceTree = "<group>"; };
+		AE290821A745610F964B0623 /* Pods_Khela_Karo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Khela_Karo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C811FC73FA0AF9EDA831B7AE /* Pods-Khela Karo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Khela Karo.release.xcconfig"; path = "Target Support Files/Pods-Khela Karo/Pods-Khela Karo.release.xcconfig"; sourceTree = "<group>"; };
+		C8614249988FEE49C4340033 /* Pods-Khela Karo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Khela Karo.debug.xcconfig"; path = "Target Support Files/Pods-Khela Karo/Pods-Khela Karo.debug.xcconfig"; sourceTree = "<group>"; };
+		D9179C6A8EF15F108EF884F8 /* Pods-Khela Karo-Khela KaroUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Khela Karo-Khela KaroUITests.debug.xcconfig"; path = "Target Support Files/Pods-Khela Karo-Khela KaroUITests/Pods-Khela Karo-Khela KaroUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E3876ABDCA365527FA6F2F90 /* Pods_Khela_Karo_Khela_KaroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Khela_Karo_Khela_KaroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C167791C017CC1FA785B03E /* Pods_Khela_Karo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6F8F8FD06377A66888537A /* Pods_Khela_KaroTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,12 +98,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DDE41597805BB0312C3B48B /* Pods_Khela_Karo_Khela_KaroUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14CEBC120B2FAFF80CC3C8CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE290821A745610F964B0623 /* Pods_Khela_Karo.framework */,
+				E3876ABDCA365527FA6F2F90 /* Pods_Khela_Karo_Khela_KaroUITests.framework */,
+				5E259C2369F8195C6557E157 /* Pods_Khela_KaroTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1847B4D0DD0B902887C68588 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C8614249988FEE49C4340033 /* Pods-Khela Karo.debug.xcconfig */,
+				C811FC73FA0AF9EDA831B7AE /* Pods-Khela Karo.release.xcconfig */,
+				D9179C6A8EF15F108EF884F8 /* Pods-Khela Karo-Khela KaroUITests.debug.xcconfig */,
+				3804C3F52A412E8722E5634B /* Pods-Khela Karo-Khela KaroUITests.release.xcconfig */,
+				6F15FC60C2659497D7FA32A3 /* Pods-Khela KaroTests.debug.xcconfig */,
+				8EEA24E374FB6974173B838E /* Pods-Khela KaroTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2C7D59ED28F14A56001A36CD = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +135,8 @@
 				2C7D5A0F28F14A58001A36CD /* Khela KaroTests */,
 				2C7D5A1A28F14A58001A36CD /* Khela KaroUITests */,
 				2C7D59F728F14A56001A36CD /* Products */,
+				1847B4D0DD0B902887C68588 /* Pods */,
+				14CEBC120B2FAFF80CC3C8CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,13 +160,12 @@
 				2C7D5A0228F14A58001A36CD /* Assets.xcassets */,
 				6FF7421229057EB200153B70 /* RegisterViewController.swift */,
 				6FF7421429057F8C00153B70 /* SportList.swift */,
-				2C71F3AC290928E400350955 /* LoginViewModel.swift */,
 				6862CF56290C18B40070E5A0 /* SportCardStruct.swift */,
 				6862CF54290C14BC0070E5A0 /* ViewExtensions.swift */,
 				6836BD21290EA6AC0014688A /* ShadowView.swift */,
 				2C7D5A0428F14A58001A36CD /* LaunchScreen.storyboard */,
+				6F110E07290EBFCD00A09B68 /* GoogleService-Info.plist */,
 				2C7D5A0728F14A58001A36CD /* Info.plist */,
-				2C71F3AE290930D000350955 /* WebService.swift */,
 			);
 			path = "Khela Karo";
 			sourceTree = "<group>";
@@ -156,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C7D5A2028F14A58001A36CD /* Build configuration list for PBXNativeTarget "Khela Karo" */;
 			buildPhases = (
+				E9A652E5E5E9769824318DB7 /* [CP] Check Pods Manifest.lock */,
 				2C7D59F228F14A56001A36CD /* Sources */,
 				2C7D59F328F14A56001A36CD /* Frameworks */,
 				2C7D59F428F14A56001A36CD /* Resources */,
+				270B5DD6E73EC972EB202F91 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -173,6 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C7D5A2328F14A58001A36CD /* Build configuration list for PBXNativeTarget "Khela KaroTests" */;
 			buildPhases = (
+				AA76B429B610B1D738BB43EB /* [CP] Check Pods Manifest.lock */,
 				2C7D5A0828F14A58001A36CD /* Sources */,
 				2C7D5A0928F14A58001A36CD /* Frameworks */,
 				2C7D5A0A28F14A58001A36CD /* Resources */,
@@ -191,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C7D5A2628F14A58001A36CD /* Build configuration list for PBXNativeTarget "Khela KaroUITests" */;
 			buildPhases = (
+				218857DCC0534156021AE7D4 /* [CP] Check Pods Manifest.lock */,
 				2C7D5A1328F14A58001A36CD /* Sources */,
 				2C7D5A1428F14A58001A36CD /* Frameworks */,
 				2C7D5A1528F14A58001A36CD /* Resources */,
+				A60A0B525919391FA0940F17 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -212,7 +256,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "Rhea Adhikari";
 				TargetAttributes = {
 					2C7D59F528F14A56001A36CD = {
@@ -254,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C7D5A0628F14A58001A36CD /* LaunchScreen.storyboard in Resources */,
+				6F110E08290EBFCD00A09B68 /* GoogleService-Info.plist in Resources */,
 				2C7D5A0328F14A58001A36CD /* Assets.xcassets in Resources */,
 				2C7D5A0128F14A56001A36CD /* Main.storyboard in Resources */,
 			);
@@ -263,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F110E09290EBFCD00A09B68 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,19 +316,121 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F110E0A290EBFCD00A09B68 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		218857DCC0534156021AE7D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Khela Karo-Khela KaroUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		270B5DD6E73EC972EB202F91 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Khela Karo/Pods-Khela Karo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Khela Karo/Pods-Khela Karo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Khela Karo/Pods-Khela Karo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A60A0B525919391FA0940F17 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Khela Karo-Khela KaroUITests/Pods-Khela Karo-Khela KaroUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Khela Karo-Khela KaroUITests/Pods-Khela Karo-Khela KaroUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Khela Karo-Khela KaroUITests/Pods-Khela Karo-Khela KaroUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA76B429B610B1D738BB43EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Khela KaroTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9A652E5E5E9769824318DB7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Khela Karo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2C7D59F228F14A56001A36CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C71F3AD290928E400350955 /* LoginViewModel.swift in Sources */,
 				2C7D59FE28F14A56001A36CD /* ViewController.swift in Sources */,
-				2C71F3AF290930D000350955 /* WebService.swift in Sources */,
 				2C7D59FA28F14A56001A36CD /* AppDelegate.swift in Sources */,
 				6836BD22290EA6AC0014688A /* ShadowView.swift in Sources */,
 				6862CF55290C14BC0070E5A0 /* ViewExtensions.swift in Sources */,
@@ -370,6 +518,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -397,7 +546,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -430,6 +579,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -460,6 +610,7 @@
 		};
 		2C7D5A2128F14A58001A36CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8614249988FEE49C4340033 /* Pods-Khela Karo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -478,6 +629,7 @@
 		};
 		2C7D5A2228F14A58001A36CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C811FC73FA0AF9EDA831B7AE /* Pods-Khela Karo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -496,6 +648,7 @@
 		};
 		2C7D5A2428F14A58001A36CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F15FC60C2659497D7FA32A3 /* Pods-Khela KaroTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -517,6 +670,7 @@
 		};
 		2C7D5A2528F14A58001A36CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EEA24E374FB6974173B838E /* Pods-Khela KaroTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -538,6 +692,7 @@
 		};
 		2C7D5A2728F14A58001A36CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9179C6A8EF15F108EF884F8 /* Pods-Khela Karo-Khela KaroUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -557,6 +712,7 @@
 		};
 		2C7D5A2828F14A58001A36CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3804C3F52A412E8722E5634B /* Pods-Khela Karo-Khela KaroUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

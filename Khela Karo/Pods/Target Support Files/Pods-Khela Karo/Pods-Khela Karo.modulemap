@@ -1,0 +1,6 @@
+framework module Pods_Khela_Karo {
+  umbrella header "Pods-Khela Karo-umbrella.h"
+
+  export *
+  module * { export * }
+}

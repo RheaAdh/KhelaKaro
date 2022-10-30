@@ -27,7 +27,7 @@ class SportList: UIViewController {
     @IBOutlet weak var ttOccupancy: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.setHidesBackButton(true, animated: false)
         
     }
 

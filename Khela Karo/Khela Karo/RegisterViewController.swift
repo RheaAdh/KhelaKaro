@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import FirebaseAuth
+import Firebase
 
 
 class RegisterViewController: UIViewController {
@@ -24,65 +25,89 @@ class RegisterViewController: UIViewController {
         self.hidesKeyboard()
         // Do any additional setup after loading the view.
     }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
-    func register(firstName: String,lastName:String,email:String, password:String, contactNumber:String){
-       guard let url =  URL(string:"http://localhost:5000/api/auth/register")
-       else{
-           return
-        }
-       let body: [String: Any] = [
-        "firstName": firstName,
-        "lastName": lastName,
-        "password":password,
-        "contactNumber":contactNumber,
-        "email":email
-        ]
-       let finalBody = try? JSONSerialization.data(withJSONObject: body)
-       var request = URLRequest(url: url)
-       request.httpMethod = "POST"
-       request.httpBody = finalBody
-       
-       request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-       URLSession.shared.dataTask(with: request){
-           (data, response, error) in
-           print(response as Any)
-           if let error = error {
-               print(error)
-               return
-           }
-           guard let data = data else{
-               return
-           }
-           print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")
-           
-       }.resume()
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
     }
     
-    @IBAction func registerPressed(_ sender: Any) {
-        if rePassword.text != password.text{
-            let alert = UIAlertController(title: "Error", message: "Password mismatch!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            self.present(alert, animated: true, completion: nil)
-            password.text = ""
-            rePassword.text = ""
-            return
+    // check the fields and validate that the data is correct. If correct return nil else return error message as a string
+    func validateFields() -> String?{
+        //check that all fields are filled in
+        if email.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            firstName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            lastName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || rePassword.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            contactNumber.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
+            return "Please fill in all fields"
         }
-        else{
+        else if isValidEmail(email.text!) == false{
+            return "Please enter valid email"
+        }
+        else if password.text != rePassword.text {
+            return "Passwords do not match"
+        }
+        else if password.text!.count < 6 {
+            return "Password must be atleast 6 characters long"
+        }
+        else if contactNumber.text!.count != 10 {
+            return "Enter 10 digit contact number"
+        }
+        return nil
+    }
+    
+    func showErrorMsg(errorMsg: String){
+        let alert = UIAlertController(title: "Error", message: errorMsg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    
+    @IBAction func registerPressed(_ sender: Any) {
+        //validate the fields
+        let error = validateFields()
+        if error != nil {
+            //show error message
+            showErrorMsg(errorMsg: error!)
+        }
+        //create the user
+        else {
             
-            register(firstName: firstName.text!, lastName: lastName.text!, email: email.text!, password: password.text!, contactNumber: contactNumber.text!)
+            // Create cleaned versions of the data
+            let firstName = firstName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let lastName = lastName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let email = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let phoneNo = contactNumber.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
+            Auth.auth().createUser(withEmail: email, password: password) {(result, err) in
+                // Check for errors
+                if err != nil {
+                    
+                    // There was an error creating the user
+                    self.showErrorMsg(errorMsg: "Error creating user")
+                }
+                else {
+                    
+                    // User was created successfully, now store the first name and last name
+                    let db = Firestore.firestore()
+                    
+                    db.collection("users").addDocument(data: ["firstname":firstName, "lastname":lastName, "uid": result!.user.uid, "phoneNo": phoneNo]) { (error) in
+                        
+                        if error != nil {
+                            // Show error message
+                            self.showErrorMsg(errorMsg: "Error saving user data")
+                        }
+                    }
+                    
+                    // Transition to the login screen
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+            }
         }
         
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

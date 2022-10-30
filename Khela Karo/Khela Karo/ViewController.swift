@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 
 
 class ViewController: UIViewController {
@@ -17,20 +17,33 @@ class ViewController: UIViewController {
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var registerButton: UIButton!
     
+    func showErrorMsg(errorMsg: String){
+        let alert = UIAlertController(title: "Error", message: errorMsg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func loginPressed(_ sender: Any) {
+        let email = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        // Signing in the user
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            
+            if error != nil {
+                // Couldn't sign in
+                self.showErrorMsg(errorMsg: error!.localizedDescription)
+                return
+            }
+            else {
+                self.performSegue(withIdentifier: "loginSuccess", sender: self.loginButton)
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hidesKeyboard()
         // Do any additional setup after loading the view.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let sender = sender as? UIButton else {return}
-        if sender == loginButton {
-            //login button pressed -> verify username and password
-//            guard let registerButton = segue.destination as? SportList else { return }
-        } else {
-            //register button pressed call the register page
-            
-        }
-    }
 }
