@@ -9,20 +9,26 @@
 import UIKit
 
 class SportList: UIViewController {
+    
+    @IBOutlet weak var badmintonAvailability: UILabel!
+    @IBOutlet weak var badmintonOccupancy: UILabel!
+    
+    
+    @IBOutlet weak var footballAvailability: UILabel!
+    @IBOutlet weak var footballOccupancy: UILabel!
+    
+    
+    @IBOutlet weak var tennisAvailability: UILabel!
+    @IBOutlet weak var tennisOccupancy: UILabel!
+    
+    
+    @IBOutlet weak var ttAvailability: UILabel!
+    
+    @IBOutlet weak var ttOccupancy: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

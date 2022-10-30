@@ -17,6 +17,9 @@
 		2C7D5A0628F14A58001A36CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C7D5A0428F14A58001A36CD /* LaunchScreen.storyboard */; };
 		2C7D5A1128F14A58001A36CD /* Khela_KaroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D5A1028F14A58001A36CD /* Khela_KaroTests.swift */; };
 		2C7D5A1C28F14A58001A36CD /* Khela_KaroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D5A1B28F14A58001A36CD /* Khela_KaroUITests.swift */; };
+		6836BD22290EA6AC0014688A /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6836BD21290EA6AC0014688A /* ShadowView.swift */; };
+		6862CF55290C14BC0070E5A0 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6862CF54290C14BC0070E5A0 /* ViewExtensions.swift */; };
+		6862CF57290C18B40070E5A0 /* SportCardStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6862CF56290C18B40070E5A0 /* SportCardStruct.swift */; };
 		6FF7421329057EB200153B70 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF7421229057EB200153B70 /* RegisterViewController.swift */; };
 		6FF7421529057F8C00153B70 /* SportList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF7421429057F8C00153B70 /* SportList.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +58,9 @@
 		2C7D5A1728F14A58001A36CD /* Khela KaroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Khela KaroUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7D5A1B28F14A58001A36CD /* Khela_KaroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Khela_KaroUITests.swift; sourceTree = "<group>"; };
 		2C7D5A1D28F14A58001A36CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6836BD21290EA6AC0014688A /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		6862CF54290C14BC0070E5A0 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		6862CF56290C18B40070E5A0 /* SportCardStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportCardStruct.swift; sourceTree = "<group>"; };
 		6FF7421229057EB200153B70 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6FF7421429057F8C00153B70 /* SportList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,11 +118,14 @@
 				2C7D59FD28F14A56001A36CD /* ViewController.swift */,
 				2C7D59FF28F14A56001A36CD /* Main.storyboard */,
 				2C7D5A0228F14A58001A36CD /* Assets.xcassets */,
-				2C7D5A0428F14A58001A36CD /* LaunchScreen.storyboard */,
-				2C7D5A0728F14A58001A36CD /* Info.plist */,
 				6FF7421229057EB200153B70 /* RegisterViewController.swift */,
 				6FF7421429057F8C00153B70 /* SportList.swift */,
 				2C71F3AC290928E400350955 /* LoginViewModel.swift */,
+				6862CF56290C18B40070E5A0 /* SportCardStruct.swift */,
+				6862CF54290C14BC0070E5A0 /* ViewExtensions.swift */,
+				6836BD21290EA6AC0014688A /* ShadowView.swift */,
+				2C7D5A0428F14A58001A36CD /* LaunchScreen.storyboard */,
+				2C7D5A0728F14A58001A36CD /* Info.plist */,
 				2C71F3AE290930D000350955 /* WebService.swift */,
 			);
 			path = "Khela Karo";
@@ -275,6 +284,9 @@
 				2C7D59FE28F14A56001A36CD /* ViewController.swift in Sources */,
 				2C71F3AF290930D000350955 /* WebService.swift in Sources */,
 				2C7D59FA28F14A56001A36CD /* AppDelegate.swift in Sources */,
+				6836BD22290EA6AC0014688A /* ShadowView.swift in Sources */,
+				6862CF55290C14BC0070E5A0 /* ViewExtensions.swift in Sources */,
+				6862CF57290C18B40070E5A0 /* SportCardStruct.swift in Sources */,
 				6FF7421529057F8C00153B70 /* SportList.swift in Sources */,
 				2C7D59FC28F14A56001A36CD /* SceneDelegate.swift in Sources */,
 				6FF7421329057EB200153B70 /* RegisterViewController.swift in Sources */,
@@ -385,7 +397,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
