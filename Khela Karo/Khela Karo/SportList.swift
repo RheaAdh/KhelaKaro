@@ -10,6 +10,14 @@ import UIKit
 
 class SportList: UIViewController {
     
+    
+    @IBOutlet weak var badmintonStack: UIStackView!
+    @IBOutlet weak var footballStackView: UIStackView!
+    @IBOutlet weak var tennisStackView: UIStackView!
+    @IBOutlet weak var ttStackView: UIStackView!
+    
+    
+    
     @IBOutlet weak var badmintonAvailability: UILabel!
     @IBOutlet weak var badmintonOccupancy: UILabel!
     
@@ -28,7 +36,22 @@ class SportList: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
-        
+        addBottomBorders(respectiveStackView: badmintonStack)
+        addBottomBorders(respectiveStackView: footballStackView)
+        addBottomBorders(respectiveStackView: tennisStackView)
+        addBottomBorders(respectiveStackView: ttStackView)
+    }
+    
+    func addBottomBorders(respectiveStackView:UIStackView) {
+       let bottomBorder = CALayer()
+        bottomBorder.frame = CGRect(x:0, y: respectiveStackView.frame.size.height - 1.0, width: respectiveStackView.frame.size.width - 30, height:1.0)
+        bottomBorder.backgroundColor = UIColor.gray.cgColor
+        bottomBorder.opacity = 0.5
+        bottomBorder.shadowColor = UIColor.gray.cgColor
+        bottomBorder.shadowOpacity = 0.2
+        bottomBorder.shadowRadius = 1
+        bottomBorder.shadowOffset = .zero
+        respectiveStackView.layer.addSublayer(bottomBorder)
     }
 
 }

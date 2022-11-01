@@ -38,12 +38,6 @@ class ShadowView: UIStackView {
         }
     }
     
-    @IBInspectable var bottomBorder =  CALayer(){
-        didSet{
-            self.updateView()
-        }
-    }
-
     //Apply params
     func updateView() {
         self.layer.shadowColor = self.shadowColor.cgColor
@@ -51,7 +45,6 @@ class ShadowView: UIStackView {
         self.layer.shadowOffset = self.shadowOffset
         self.layer.shadowRadius = self.shadowRadius
         self.layer.borderWidth = self.borderWidth
-        self.layer.addSublayer(bottomBorder)
     }
 }
 

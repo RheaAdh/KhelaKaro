@@ -11,7 +11,8 @@ import FirebaseAuth
 
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var loginScrollView: UIScrollView!
+    
     @IBOutlet var email: UITextField!
     @IBOutlet var password: UITextField!
     @IBOutlet var loginButton: UIButton!
@@ -43,7 +44,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hidesKeyboard()
-        // Do any additional setup after loading the view.
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    
+    var isExpand : Bool = false
+    @objc func keyboardWillShow(){
+        if !isExpand{
+            self.loginScrollView.contentSize = CGSize(width: self.view.frame.width, height: loginScrollView.frame.height+300)
+            isExpand = true
+        }
+    }
+
+    @objc func keyboardWillHide(){
+        self.loginScrollView.contentSize = CGSize(width: self.view.frame.width, height: loginScrollView.frame.height-300)
+        isExpand = false
+    }
 }
