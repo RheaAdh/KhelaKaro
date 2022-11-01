@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 
 
 class ViewController: UIViewController {
@@ -17,6 +18,10 @@ class ViewController: UIViewController {
     @IBOutlet var password: UITextField!
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var registerButton: UIButton!
+    
+    var firstName = ""
+    var lastName = ""
+    var contactNo = ""
     
     func showErrorMsg(errorMsg: String){
         let alert = UIAlertController(title: "Error", message: errorMsg, preferredStyle: .alert)
@@ -37,6 +42,7 @@ class ViewController: UIViewController {
                 return
             }
             else {
+                self.getUser()
                 self.performSegue(withIdentifier: "loginSuccess", sender: self.loginButton)
             }
         }
@@ -51,6 +57,7 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    //<<<<<<< HEAD
     
     var isExpand : Bool = false
     @objc func keyboardWillShow(){
@@ -59,9 +66,31 @@ class ViewController: UIViewController {
             isExpand = true
         }
     }
-
+    
     @objc func keyboardWillHide(){
         self.loginScrollView.contentSize = CGSize(width: self.view.frame.width, height: loginScrollView.frame.height-300)
         isExpand = false
+        //=======
+        func getUser() {
+            guard let userID = Auth.auth().currentUser?.uid else { return }
+            let db = Firestore.firestore()
+            let users = db.collection("users")
+            let query = users.whereField("uid", isEqualTo: userID)
+            query.getDocuments(completion: {(querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        self.lastName = (document.data()["lastname"] as? String ?? nil)!
+                        self.firstName = (document.data()["firstname"] as? String ?? nil)!
+                        self.contactNo = (document.data()["phoneNo"] as? String ?? nil)!
+                        //print("\(firstName) => \(lastName)")
+                        //print("\(email)")
+                    }
+                }})
+            let constants = Constants(uid: userID, firstname: firstName, lastname: lastName, contactno: contactNo)
+            print("\(constants.uid), \(constants.firstname)")
+            //>>>>>>> refs/remotes/origin/master
+        }
     }
 }
