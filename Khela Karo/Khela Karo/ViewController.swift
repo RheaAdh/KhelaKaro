@@ -71,6 +71,7 @@ class ViewController: UIViewController {
         self.loginScrollView.contentSize = CGSize(width: self.view.frame.width, height: loginScrollView.frame.height-300)
         isExpand = false
         //=======
+    }
         func getUser() {
             guard let userID = Auth.auth().currentUser?.uid else { return }
             let db = Firestore.firestore()
@@ -93,4 +94,3 @@ class ViewController: UIViewController {
             //>>>>>>> refs/remotes/origin/master
         }
     }
-}

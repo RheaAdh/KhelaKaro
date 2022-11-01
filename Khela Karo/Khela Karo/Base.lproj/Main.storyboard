@@ -130,31 +130,31 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="6zv-qM-TIt">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="249"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Badminton" translatesAutoresizingMaskIntoConstraints="NO" id="f0T-jx-cQi">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Badminton" translatesAutoresizingMaskIntoConstraints="NO" id="8BS-TA-Jg5">
                                                         <rect key="frame" x="10" y="8" width="178" height="233"/>
                                                     </imageView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Oif-CL-4Dq">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="S6k-CM-JKU">
                                                         <rect key="frame" x="228" y="8" width="178" height="233"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badminton" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2CY-QK-IqH">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badminton" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNY-Lu-q0s">
                                                                 <rect key="frame" x="83.5" y="10" width="86.5" height="53"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Availability" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbA-kc-Me8">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Availability" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98t-lw-hJx">
                                                                 <rect key="frame" x="90" y="63" width="80" height="53.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Occupancy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZJ-rv-elS">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Occupancy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CL-xt-Oax">
                                                                 <rect key="frame" x="83" y="116.5" width="87" height="53"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Syh-iH-eUk">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3B-Yq-KeE">
                                                                 <rect key="frame" x="76.5" y="169.5" width="93.5" height="53.5"/>
                                                                 <color key="tintColor" red="0.74087461960000001" green="0.51920784959999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <state key="normal" title="Button"/>
@@ -162,7 +162,7 @@
                                                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleSubhead"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
-                                                                    <segue destination="zLk-sI-3Mk" kind="show" id="KfM-zS-Tcz"/>
+                                                                    <segue destination="zLk-sI-3Mk" kind="show" id="ai0-s3-66w"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -385,12 +385,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="ejx-MY-Wzg"/>
                     <connections>
-                        <outlet property="badmintonAvailability" destination="EbA-kc-Me8" id="gdT-ut-4ry"/>
-                        <outlet property="badmintonOccupancy" destination="IZJ-rv-elS" id="ze1-kx-bex"/>
                         <outlet property="badmintonStack" destination="6zv-qM-TIt" id="HZk-ab-LTo"/>
                         <outlet property="footballAvailability" destination="n4w-2b-LK9" id="G1K-0c-XUd"/>
                         <outlet property="footballOccupancy" destination="NCY-Je-jdU" id="nqP-df-BOr"/>
                         <outlet property="footballStackView" destination="6Zy-Tg-e3g" id="q24-yV-hB1"/>
+                        <outlet property="mainVerticalStack" destination="TQT-81-xVk" id="xLb-of-6bp"/>
                         <outlet property="tennisAvailability" destination="Py3-hu-ay0" id="hsn-xi-amn"/>
                         <outlet property="tennisOccupancy" destination="Tqm-zt-jaa" id="uRN-aR-pUa"/>
                         <outlet property="tennisStackView" destination="nzC-pd-xdh" id="For-AA-J5G"/>
@@ -648,7 +647,7 @@
     <resources>
         <image name="Badminton" width="584" height="440"/>
         <image name="Football" width="590" height="434"/>
-        <image name="LoginImage" width="1728" height="1182"/>
+        <image name="LoginImage" width="828" height="613"/>
         <image name="TableTennis " width="612" height="490"/>
         <image name="Tennis" width="590" height="436"/>
         <systemColor name="opaqueSeparatorColor">

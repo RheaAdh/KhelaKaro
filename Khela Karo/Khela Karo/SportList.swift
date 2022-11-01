@@ -10,6 +10,7 @@ import UIKit
 
 class SportList: UIViewController {
     
+    @IBOutlet weak var mainVerticalStack: UIStackView!
     
     @IBOutlet weak var badmintonStack: UIStackView!
     @IBOutlet weak var footballStackView: UIStackView!
@@ -47,11 +48,18 @@ class SportList: UIViewController {
         bottomBorder.frame = CGRect(x:0, y: respectiveStackView.frame.size.height - 1.0, width: respectiveStackView.frame.size.width - 30, height:1.0)
         bottomBorder.backgroundColor = UIColor.gray.cgColor
         bottomBorder.opacity = 0.5
-        bottomBorder.shadowColor = UIColor.gray.cgColor
-        bottomBorder.shadowOpacity = 0.2
-        bottomBorder.shadowRadius = 1
-        bottomBorder.shadowOffset = .zero
+        
         respectiveStackView.layer.addSublayer(bottomBorder)
+    }
+    
+    func styleVerticalStack(){
+        mainVerticalStack.layer.cornerRadius = 20
+        mainVerticalStack.layer.shadowColor = UIColor.gray.cgColor
+        mainVerticalStack.layer.shadowOpacity = 1
+        mainVerticalStack.layer.shadowOffset = .zero
+        mainVerticalStack.layer.shadowRadius = 10
+        mainVerticalStack.layer.borderWidth = 1
+        mainVerticalStack.layer.borderColor = UIColor.gray.cgColor
     }
 
 }
