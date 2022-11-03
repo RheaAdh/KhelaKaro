@@ -36,3 +36,24 @@ Do the following:
 -   always pass emailid of loggedin user in request body
 -   send date from frontend as a number converted to seconds
     (startDateTime)
+
+---
+
+Snehas TODO
+
+1. register user populate mongo atlas
+2. profile ui
+
+-   frequency of each sport played ( show max min whatever )
+-   active days history with date user can see which sport(s) he played on that day
+
+3. see date thing
+
+http://localhost:5000/api/auth/register
+
+{
+"firstName":"Rhea",
+"lastName":"Adhikari",
+"email":"rheadhikari@gmail.com",
+"contactNumber":9999999999
+}
