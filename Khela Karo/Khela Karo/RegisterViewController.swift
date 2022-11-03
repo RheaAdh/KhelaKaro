@@ -13,6 +13,8 @@ import Firebase
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var registerScrollView: UIScrollView!
+    
     @IBOutlet var firstName: UITextField!
     @IBOutlet var lastName: UITextField!
     @IBOutlet var email: UITextField!
@@ -23,7 +25,25 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hidesKeyboard()
-        // Do any additional setup after loading the view.
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    var isExpand : Bool = false
+    @objc func keyboardWillShow(){
+        if !isExpand{
+            self.registerScrollView.contentSize = CGSize(width: self.view.frame.width, height: registerScrollView.frame.height+300)
+            isExpand = true
+        }
+    }
+    
+    @objc func keyboardWillHide(){
+        self.registerScrollView.contentSize = CGSize(width: self.view.frame.width, height: registerScrollView.frame.height-300)
+        isExpand = false
+        //=======
     }
     
     func isValidEmail(_ email: String) -> Bool {
