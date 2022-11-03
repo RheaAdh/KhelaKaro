@@ -16,11 +16,18 @@ router.post('/', isLoggedIn, async (req, res) => {
         const bookings = await Booking.find({
             facility: chosenFacility._id,
         });
-
+        let alreadyBookedBooking = await Booking.findOne({
+            startDateTime: chosenStartDate,
+            user: req.user._id,
+        });
+        if (alreadyBookedBooking) {
+            return res.send({
+                success: false,
+                msg: 'Already Booked by you please try for another time slot',
+            });
+        }
         let countOfCourtsBooked = 0;
         var occupied = new Set();
-        console.log('LENNNNN ');
-        console.log(bookings.length);
         for (let i = 0; i < bookings.length; i++) {
             let start = bookings[i].startDateTime;
             let end = bookings[i].endDateTime;
@@ -37,7 +44,7 @@ router.post('/', isLoggedIn, async (req, res) => {
         if (countOfCourtsBooked == facility.count) {
             res.json({
                 success: true,
-                msg: 'Cannot book as all are occupied',
+                msg: 'Cannot book as all are occupied by others.',
             });
         } else {
             let bookCourtNumber = 1;

@@ -16,6 +16,8 @@ Do the following:
     "startDateTime":600
     }
 
+    Cannot cancel bookings
+
 2. Profile Page
 
 -   most frequent sport played ( show this )
