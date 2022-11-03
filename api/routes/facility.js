@@ -1,17 +1,19 @@
 const express = require('express');
 const router = express.Router();
+const Facility = require('../models/Facility');
 
-//hardcode using this in DB for Marena
+//hardcode using this in DB for Marena http://localhost:5000/api/facility/add
 router.post('/add', async (req, res) => {
-    const facility = new Facility({
-        name: req.body.name,
-        count: req.body.count,
-    });
     try {
+        const facility = new Facility({
+            facilityId: req.body.facilityId,
+            name: req.body.name,
+            count: req.body.count,
+        });
         await facility.save();
         res.json({
             success: true,
-            msg: 'added successfully.',
+            msg: 'Added successfully.',
         });
     } catch (err) {
         console.log(`Error : ${err.message}`);

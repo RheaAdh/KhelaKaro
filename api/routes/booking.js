@@ -5,18 +5,22 @@ const Facility = require('../models/Facility');
 const router = express.Router();
 
 //book now
-router.post('/:id', isLoggedIn, async (req, res) => {
+router.post('/', isLoggedIn, async (req, res) => {
     //if already booked for that time slot and facility we dont allow
-    const chosenFacility = req.params.id;
-    const chosenStartDate = req.body.startdate;
-    const chosenEndDate = req.body.enddate;
+
+    const chosenFacility = req.body.facilityId;
+    const chosenStartDate = req.body.startDateTime;
+    const chosenEndDate = chosenStartDate + 60 * 60; //calculate +1hr dont take input
     try {
-        const facility = await Facility.findById(chosenFacility);
+        const facility = await Facility.findOne({ facilityId: chosenFacility });
         const bookings = await Booking.find({
-            facility: chosenFacility,
+            facility: chosenFacility._id,
         });
+
         let countOfCourtsBooked = 0;
         var occupied = new Set();
+        console.log('LENNNNN ');
+        console.log(bookings.length);
         for (let i = 0; i < bookings.length; i++) {
             let start = bookings[i].startDateTime;
             let end = bookings[i].endDateTime;
@@ -28,32 +32,34 @@ router.post('/:id', isLoggedIn, async (req, res) => {
                 }
             }
         }
+        console.log('countOfCourtsBooked', countOfCourtsBooked);
+        console.log('facility.count', facility.count);
         if (countOfCourtsBooked == facility.count) {
             res.json({
                 success: true,
                 msg: 'Cannot book as all are occupied',
             });
         } else {
-            let bookCourtNumber = 0;
+            let bookCourtNumber = 1;
             for (let i = 1; i <= facility.count; i++) {
-                if (occupied.find(i) != occupied.end()) {
+                if (!occupied.has(i)) {
                     bookCourtNumber = i;
                     break;
                 }
             }
             //allow booking
             const newBooking = new Booking({
-                startDateTime: start,
-                endDateTime: end,
+                startDateTime: chosenStartDate,
+                endDateTime: chosenEndDate,
                 user: req.user._id,
-                facility: chosenFacility,
+                facility: chosenFacility._id,
                 courtNumber: bookCourtNumber,
             });
 
             await newBooking.save();
             res.json({
                 success: true,
-                msg: 'Booked successfully.',
+                msg: 'Booked court ' + bookCourtNumber + ' successfully!',
             });
         }
     } catch (err) {

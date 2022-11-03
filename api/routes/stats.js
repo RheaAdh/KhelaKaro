@@ -4,6 +4,7 @@ const router = express.Router();
 
 router.get('/consistency', async (req, res) => {
     //no.of active days send for all months and u can navigate thru diff months of the year and see calender
+    //each streak = 30days
     let activeDays = [];
     const bookings = await Booking.find({ user: req.user._id });
     for (let i = 0; i < bookings.length; i++) {
@@ -12,6 +13,7 @@ router.get('/consistency', async (req, res) => {
     return res.json({
         success: true,
         data: activeDays,
+        streak: streakCount,
         msg: 'Active Days List',
     });
 });

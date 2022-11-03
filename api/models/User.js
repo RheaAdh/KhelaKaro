@@ -1,13 +1,10 @@
 const mongoose = require('mongoose');
-const crypto = require('crypto');
-const bcrypt = require('bcrypt');
-
 const UserSchema = mongoose.Schema({
     firstName: {
         type: String,
         required: true,
     },
-    lastName:{
+    lastName: {
         type: String,
         required: true,
     },
