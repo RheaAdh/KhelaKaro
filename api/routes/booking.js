@@ -6,12 +6,30 @@ const router = express.Router();
 
 //book now
 router.post('/', isLoggedIn, async (req, res) => {
-    //if already booked for that time slot and facility we dont allow
-
     const chosenFacility = req.body.facilityId;
     const chosenStartDate = req.body.startDateTime;
     const chosenEndDate = chosenStartDate + 60 * 60; //calculate +1hr dont take input
+
+    //timings of marena need to check
+    // if(chosenStartDate<)
+
+    //if already booked for that time slot and facility we dont allow
     try {
+        //check if same person has already booked another facility for same startdatetime
+        for (let i = 1; i <= 4; i++) {
+            const currFacility = await Facility.findOne({ facilityId: i });
+            const currBookings = await Booking.find({
+                user: req.user._id,
+                facility: chosenFacility._id,
+                startDateTime: chosenStartDate,
+            });
+            if (currBookings) {
+                return res.send({
+                    success: false,
+                    msg: 'Already Booked for same time slot by you.',
+                });
+            }
+        }
         const facility = await Facility.findOne({ facilityId: chosenFacility });
         const bookings = await Booking.find({
             facility: chosenFacility._id,
@@ -23,9 +41,24 @@ router.post('/', isLoggedIn, async (req, res) => {
         if (alreadyBookedBooking) {
             return res.send({
                 success: false,
-                msg: 'Already Booked by you please try for another time slot',
+                msg: 'Already Booked for same time slot by you please try for another time slot after a gap of 24hours.',
             });
         }
+        //TODO:
+        let alreadyBookedWithinInterval = await Booking.findOne({
+            startDateTime: {
+                $gt: chosenStartDate - 12 * 60 * 60,
+                $lt: chosenStartDate + 12 * 60 * 60,
+            },
+            user: req.user._id,
+        });
+        if (alreadyBookedWithinInterval) {
+            return res.send({
+                success: false,
+                msg: 'You cannot book within 24hours again.',
+            });
+        }
+
         let countOfCourtsBooked = 0;
         var occupied = new Set();
         for (let i = 0; i < bookings.length; i++) {

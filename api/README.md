@@ -20,7 +20,7 @@ Do the following:
 
 2. Profile Page
 
--   most frequent sport played ( show this )
+-   frequency of each sport played ( show max min whatever )
 -   active days history with date user can see which sport(s) he played on that day
 -   add badge if 30 days
 
