@@ -30,6 +30,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginPressed(_ sender: Any) {
+        //disabling button
+        loginButton.isEnabled = false
+        loginButton.borderColor = UIColor.gray
+        
         let email = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
@@ -38,6 +42,8 @@ class ViewController: UIViewController {
             
             if error != nil {
                 // Couldn't sign in
+                self.loginButton.isEnabled = true
+                self.loginButton.borderColor = UIColor(red: 0.741, green: 0.518, blue: 1.0, alpha: 1.0)
                 self.showErrorMsg(errorMsg: error!.localizedDescription)
                 return
             }
