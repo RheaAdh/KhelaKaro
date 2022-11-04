@@ -6,8 +6,8 @@ const BookingSchema = mongoose.Schema({
     user: { type: mongoose.Types.ObjectId, ref: 'User' },
     facility: { type: mongoose.Types.ObjectId, ref: 'Facility' },
     courtNumber: { type: Number },
-    startDateTime: { type: Number },
-    endDateTime: { type: Number },
+    startDateTime: { type: Date },
+    endDateTime: { type: Date },
 });
 
 module.exports = mongoose.model('booking', BookingSchema);

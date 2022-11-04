@@ -21,4 +21,13 @@ router.post('/add', async (req, res) => {
     }
 });
 
+router.post('/allfacilities', async (req, res) => {
+    try {
+        let facilities = await Facility.find();
+        return res.json(facilities);
+    } catch (err) {
+        console.log(`Error : ${err.message}`);
+        res.status(500).json({ success: false, msg: 'Server Error' });
+    }
+});
 module.exports = router;

@@ -1,36 +1,42 @@
 const express = require('express');
-const isLoggedIn = require('../middleware/isLoggedIn');
 const Booking = require('../models/Booking');
 const Facility = require('../models/Facility');
 const router = express.Router();
 
-//book now
-router.post('/', isLoggedIn, async (req, res) => {
+//Book a facility
+router.post('/', async (req, res) => {
     const chosenFacility = req.body.facilityId;
-    const chosenStartDate = req.body.startDateTime;
-    const chosenEndDate = chosenStartDate + 60 * 60; //calculate +1hr dont take input
+    const newDate = new Date(req.body.startDateTime);
+    const chosenStartDate = newDate.getTime();
+    const chosenEndDate = chosenStartDate + 60 * 60;
 
-    //timings of marena need to check
-    // if(chosenStartDate<)
-
-    //if already booked for that time slot and facility we dont allow
     try {
+        // const hourlySecond = chosenStartDate % 86400;
+        // console.log(hourlySecond);
+        //39600 is 11AM
+        //64800 is 6PM
+        // if (hourlySecond < 39600 || hourlySecond > 64800) {
+        //     return res.send({
+        //         success: false,
+        //         msg: 'Please try to book start Time between working hours 11AM to 6PM',
+        //     });
+        // }
+
         //check if same person has already booked another facility for same startdatetime
-        for (let i = 1; i <= 4; i++) {
-            const currFacility = await Facility.findOne({ facilityId: i });
-            const currBookings = await Booking.find({
-                user: req.user._id,
-                facility: chosenFacility._id,
-                startDateTime: chosenStartDate,
-            });
-            if (currBookings) {
+        const currBookings = await Booking.find({ user: req.user._id });
+        for (let i = 0; i < currBookings.length; i++) {
+            const date = new Date(currBookings[i].startDateTime);
+            if (chosenStartDate >= date && chosenStartDate <= date + 3600) {
                 return res.send({
                     success: false,
-                    msg: 'Already Booked for same time slot by you.',
+                    msg: 'Yove have a clashing booking.',
                 });
             }
         }
-        const facility = await Facility.findOne({ facilityId: chosenFacility });
+
+        const facility = await Facility.findOne({
+            facilityId: chosenFacility,
+        });
         const bookings = await Booking.find({
             facility: chosenFacility._id,
         });
@@ -44,19 +50,39 @@ router.post('/', isLoggedIn, async (req, res) => {
                 msg: 'Already Booked for same time slot by you please try for another time slot after a gap of 24hours.',
             });
         }
-        //TODO:
-        let alreadyBookedWithinInterval = await Booking.findOne({
-            startDateTime: {
-                $gt: chosenStartDate - 12 * 60 * 60,
-                $lt: chosenStartDate + 12 * 60 * 60,
-            },
+        // console.log('====================================');
+        // console.log(chosenFacility._id);
+        // console.log('====================================');
+        // console.log('====================================');
+        // const minDate = new Date((chosenStartDate - 12 * 60 * 60) * 1000);
+        // const maxDate = new Date((chosenStartDate + 12 * 60 * 60) * 1000);
+        // console.log(minDate, maxDate);
+        // console.log('====================================');
+        // let alreadyBookedWithinInterval = await Booking.find({
+        //     startDateTime: {
+        //         $gt: minDate,
+        //         $lt: maxDate,
+        //     },
+        //     user: req.user._id,
+        //     facility: chosenFacility._id,
+        // });
+        let arr = await Booking.find({
             user: req.user._id,
+            facility: facility._id,
         });
-        if (alreadyBookedWithinInterval) {
-            return res.send({
-                success: false,
-                msg: 'You cannot book within 24hours again.',
-            });
+        for (let i = 0; i < arr.length; i++) {
+            const minDate = new Date(arr[i].startDateTime) - 86400;
+            const sBetweenDates = Math.abs(minDate - chosenStartDate);
+            const hoursBetweenDates = sBetweenDates / (60 * 60 * 1000);
+            console.log('====================================');
+            console.log(hoursBetweenDates);
+            console.log('====================================');
+            if (hoursBetweenDates < 24) {
+                return res.send({
+                    success: false,
+                    msg: 'Yove already have a booking within past 24hours for same sport.',
+                });
+            }
         }
 
         let countOfCourtsBooked = 0;
@@ -64,6 +90,7 @@ router.post('/', isLoggedIn, async (req, res) => {
         for (let i = 0; i < bookings.length; i++) {
             let start = bookings[i].startDateTime;
             let end = bookings[i].endDateTime;
+
             if (!(chosenStartDate >= end || chosenEndDate <= start)) {
                 countOfCourtsBooked++;
                 occupied.add(bookings[i].courtNumber);
@@ -72,8 +99,6 @@ router.post('/', isLoggedIn, async (req, res) => {
                 }
             }
         }
-        console.log('countOfCourtsBooked', countOfCourtsBooked);
-        console.log('facility.count', facility.count);
         if (countOfCourtsBooked == facility.count) {
             res.json({
                 success: true,
@@ -92,13 +117,14 @@ router.post('/', isLoggedIn, async (req, res) => {
                 startDateTime: chosenStartDate,
                 endDateTime: chosenEndDate,
                 user: req.user._id,
-                facility: chosenFacility._id,
+                facility: facility._id,
                 courtNumber: bookCourtNumber,
             });
 
             await newBooking.save();
             res.json({
                 success: true,
+                courtNumber: bookCourtNumber,
                 msg: 'Booked court ' + bookCourtNumber + ' successfully!',
             });
         }

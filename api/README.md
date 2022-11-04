@@ -9,24 +9,15 @@ Do the following:
 
 1. Book Now
 
--   http://localhost:5000/api/booking
--   {
-    "email":"321@gmail.com",
-    "facilityId":1,
-    "startDateTime":600
-    }
-
-    Cannot cancel bookings
+-   show err message coming backend as a popup
 
 2. Profile Page
 
 -   frequency of each sport played ( show max min whatever )
--   active days history with date user can see which sport(s) he played on that day
--   add badge if 30 days
+-   for each sport show history of dates he played
 
 3. Individual Sport Page
 
--   when is the most crowded time
 -   number of courts
 -   on confirmation it will show the court number which is assigned
 
@@ -34,22 +25,22 @@ Do the following:
 
 -   when you register in swift using firebase just call /register and pass all details in body (firstName, lastName, email, contactNumber)
 -   always pass emailid of loggedin user in request body
--   send date from frontend as a number converted to seconds
-    (startDateTime)
+-   always Post request
+-   send date from frontend in this format "July 1, 1978 02:30:00"
 
 ---
 
-Snehas TODO
+THINGS TODO
 
 1. register user populate mongo atlas
-2. profile ui
+2. Profile ui
 
 -   frequency of each sport played ( show max min whatever )
 -   active days history with date user can see which sport(s) he played on that day
 
-3. see date thing
+3. Integrate frontend and backend fully
 
-http://localhost:5000/api/auth/register
+POST http://localhost:5000/api/auth/register
 
 {
 "firstName":"Rhea",
@@ -57,3 +48,18 @@ http://localhost:5000/api/auth/register
 "email":"rheadhikari@gmail.com",
 "contactNumber":9999999999
 }
+
+POST http://localhost:5000/api/stats/freqencySport
+
+{
+"email":"rheadhikari@gmail.com"
+}
+
+Booking
+
+-   POST http://localhost:5000/api/booking
+-   {
+    "email":"321@gmail.com",
+    "facilityId":1,
+    "startDateTime":600
+    }

@@ -15,7 +15,6 @@ const UserSchema = mongoose.Schema({
     },
     contactNumber: {
         type: String,
-        //required: true
     },
 });
 module.exports = mongoose.model('user', UserSchema);
