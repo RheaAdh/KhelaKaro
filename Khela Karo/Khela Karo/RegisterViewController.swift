@@ -8,7 +8,8 @@
 
 import UIKit
 import FirebaseAuth
-import Firebase
+import Alamofire
+import SwiftyJSON
 
 
 class RegisterViewController: UIViewController {
@@ -21,6 +22,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet var contactNumber: UITextField!
     @IBOutlet var password: UITextField!
     @IBOutlet var rePassword: UITextField!
+    var result = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,26 @@ class RegisterViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
+    func registerInMongo(firstName: String, lastName: String, email: String, contactNumber: String){
+        
+        //declare parameter as a dictionary which contains string as key and value combination. considering inputs are valid
+
+        let parameters: [String: String] = ["firstName": firstName, "lastName": lastName, "email": email, "contactNumber": contactNumber]
+        AF.request("http://localhost:5000/api/auth/register", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in
+//            print("Response: \(response.result)")
+            if let json = response.data {
+//                print("json:\(json)")
+                let responseJSON = try! JSON(data: json)
+                let message = responseJSON["msg"].stringValue
+                if !message.isEmpty {
+//                        print(message)
+                    self.result =  message
+                    }
+                }
+        }
+    }
+
     
     var isExpand : Bool = false
     @objc func keyboardWillShow(){
@@ -112,17 +134,19 @@ class RegisterViewController: UIViewController {
                 else {
                     
                     // User was created successfully, now store the first name and last name
-                    let db = Firestore.firestore()
+//                    let db = Firestore.firestore()
+//
+//                    db.collection("users").addDocument(data: ["firstname":firstName, "lastname":lastName, "uid": result!.user.uid, "phoneNo": phoneNo]) { (error) in
+//
+//                        if error != nil {
+//                            // Show error message
+//                            self.showErrorMsg(errorMsg: "Error saving user data")
+//                        }
+//                    }
                     
-                    db.collection("users").addDocument(data: ["firstname":firstName, "lastname":lastName, "uid": result!.user.uid, "phoneNo": phoneNo]) { (error) in
-                        
-                        if error != nil {
-                            // Show error message
-                            self.showErrorMsg(errorMsg: "Error saving user data")
-                        }
-                    }
-                    
-                    // Transition to the login screen
+                    //storing in mongodb
+                    self.registerInMongo(firstName: firstName, lastName: lastName, email: email, contactNumber: phoneNo)
+                    if self.result != "" {self.showErrorMsg(errorMsg: self.result)}
                     self.navigationController?.popToRootViewController(animated: true)
                 }
             }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a9X-lR-WOu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a9X-lR-WOu">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -58,8 +58,8 @@
                                                     <segue destination="CgQ-Cn-xJa" kind="show" id="OcM-yC-lcz"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vE-qE-lcf">
-                                                <rect key="frame" x="175" y="571" width="66" height="35"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vE-qE-lcf">
+                                                <rect key="frame" x="175.5" y="590.5" width="66" height="35"/>
                                                 <color key="tintColor" red="0.74087461960000001" green="0.51920784959999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Login"/>
@@ -87,7 +87,6 @@
                                             <constraint firstItem="eyh-4f-5pc" firstAttribute="top" secondItem="CiZ-Qp-FcT" secondAttribute="top" constant="50" id="Pe9-J1-S6T"/>
                                             <constraint firstAttribute="trailing" secondItem="eyh-4f-5pc" secondAttribute="trailing" constant="10" id="QHE-4w-XYJ"/>
                                             <constraint firstItem="hd6-Yr-qy1" firstAttribute="leading" secondItem="CiZ-Qp-FcT" secondAttribute="leading" constant="165" id="QY4-us-zNF"/>
-                                            <constraint firstItem="hd6-Yr-qy1" firstAttribute="top" secondItem="9vE-qE-lcf" secondAttribute="bottom" constant="20" id="YCG-3N-tqA"/>
                                             <constraint firstItem="vlf-Rb-Sce" firstAttribute="top" secondItem="eyh-4f-5pc" secondAttribute="bottom" constant="83" id="YaH-Wu-oY9"/>
                                             <constraint firstItem="vlf-Rb-Sce" firstAttribute="centerX" secondItem="XSr-n0-KUm" secondAttribute="centerX" id="bUS-2V-G9Y"/>
                                             <constraint firstAttribute="bottom" secondItem="eyh-4f-5pc" secondAttribute="bottom" constant="500" id="fJc-FT-1hz"/>
@@ -96,6 +95,7 @@
                                             <constraint firstAttribute="trailing" secondItem="vlf-Rb-Sce" secondAttribute="trailing" constant="100" id="kzD-Sc-oYj"/>
                                             <constraint firstItem="XSr-n0-KUm" firstAttribute="top" secondItem="vlf-Rb-Sce" secondAttribute="bottom" constant="19" id="nsY-IY-DqG"/>
                                             <constraint firstItem="eyh-4f-5pc" firstAttribute="leading" secondItem="CiZ-Qp-FcT" secondAttribute="leading" constant="10" id="pum-e4-0W5"/>
+                                            <constraint firstItem="hd6-Yr-qy1" firstAttribute="top" secondItem="9vE-qE-lcf" secondAttribute="bottom" constant="25" id="q4I-DF-TOW"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -807,7 +807,7 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Table Tennis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPl-JU-1xe">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Gym" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPl-JU-1xe">
                                                                 <rect key="frame" x="8" y="5" width="106" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
@@ -932,16 +932,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ejx-MY-Wzg">
-                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="b0y-yU-V5w">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="JM5-5x-f2F">
-                                <rect key="frame" x="302" y="0.0" width="92" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="ProfileIconSmall" imagePlacement="trailing"/>
-                                <connections>
-                                    <segue destination="6wi-Ji-bDn" kind="show" id="GHO-x5-y3H"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="ProfileIconSmall" style="plain" id="b0y-yU-V5w">
+                            <connections>
+                                <segue destination="6wi-Ji-bDn" kind="show" id="Eaf-IB-RjJ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -950,7 +944,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFp-3v-jAh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2851" y="-9"/>
+            <point key="canvasLocation" x="2951" y="-9"/>
         </scene>
         <!--Football View Controller-->
         <scene sceneID="eez-TR-x0C">
@@ -1028,6 +1022,9 @@
                                                         <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="bookNowPressed:" destination="03y-dg-nEI" eventType="touchUpInside" id="IQN-8e-Lo9"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The popularity of this sport is 70%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzM-hn-FwR">
                                                 <rect key="frame" x="30" y="300" width="354" height="20.5"/>
@@ -1063,6 +1060,7 @@
                     <navigationItem key="navigationItem" id="xKc-wf-haF"/>
                     <connections>
                         <outlet property="bookNowButton" destination="QJE-ob-dph" id="mqE-Sw-Dfl"/>
+                        <outlet property="dateTime" destination="tKP-9e-nk1" id="10P-Hx-FUI"/>
                         <outlet property="dateTimePicker" destination="tKP-9e-nk1" id="hC4-Lj-caP"/>
                     </connections>
                 </viewController>
@@ -1423,7 +1421,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Mz3-iR-7ia">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="D5I-yn-qdc">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Pmq-6L-sEZ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Pmq-6L-sEZ">
                                 <rect key="frame" x="302" y="5" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -1439,6 +1437,8 @@
                         <outlet property="logoutButton" destination="D5I-yn-qdc" id="rGC-Tf-iIt"/>
                         <outlet property="myBookingsTableView" destination="4h9-Ba-9t3" id="89E-OB-ytz"/>
                         <outlet property="streakDays" destination="owk-uS-zcv" id="KRA-MC-Bg9"/>
+                        <outlet property="userEmail" destination="6Gn-Oe-lLZ" id="bD0-tK-zJ3"/>
+                        <outlet property="userName" destination="aHU-kB-5j7" id="KDD-aN-iPZ"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="LogoutSegue" id="FmK-gm-zLA"/>
                     </connections>
                 </viewController>
@@ -1653,6 +1653,9 @@
                                                         <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="bookNowPressed:" destination="3ug-Bm-eyW" eventType="touchUpInside" id="uqO-8M-gYw"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The popularity of this sport is 91%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjW-a1-aiX">
                                                 <rect key="frame" x="30" y="317" width="354" height="20.5"/>
@@ -1770,6 +1773,9 @@
                                                         <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="bookNowPressed:" destination="iKL-5I-rJe" eventType="touchUpInside" id="hBN-e4-HNo"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The popularity of this sport is 50%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbg-3s-7Ci">
                                                 <rect key="frame" x="30" y="300" width="354" height="20.5"/>
@@ -1888,6 +1894,9 @@
                                                         <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="bookNowPressed:" destination="9zN-Ij-egs" eventType="touchUpInside" id="Sno-hJ-NOq"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The popularity of this sport is 50%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykr-Iq-ItG">
                                                 <rect key="frame" x="30" y="346" width="354" height="20.5"/>

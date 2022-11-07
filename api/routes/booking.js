@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
             if (chosenStartDate >= date && chosenStartDate <= date + 3600) {
                 return res.send({
                     success: false,
-                    msg: 'Yove have a clashing booking.',
+                    msg: 'You have a clashing booking.',
                 });
             }
         }
@@ -47,7 +47,7 @@ router.post('/', async (req, res) => {
         if (alreadyBookedBooking) {
             return res.send({
                 success: false,
-                msg: 'Already Booked for same time slot by you please try for another time slot after a gap of 24hours.',
+                msg: 'Already Booked for same time slot by you please try for another time slot after a gap of 24 hours.',
             });
         }
         // console.log('====================================');
@@ -80,7 +80,7 @@ router.post('/', async (req, res) => {
             if (hoursBetweenDates < 24) {
                 return res.send({
                     success: false,
-                    msg: 'Yove already have a booking within past 24hours for same sport.',
+                    msg: 'You already have a booking within past 24hours for same sport.',
                 });
             }
         }

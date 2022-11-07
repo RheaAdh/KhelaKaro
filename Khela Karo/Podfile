@@ -10,6 +10,8 @@ target 'Khela Karo' do
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
   target 'Khela KaroTests' do
     inherit! :search_paths
     # Pods for testing

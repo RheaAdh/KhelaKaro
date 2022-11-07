@@ -19,6 +19,7 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/booking', isLoggedIn, require('./routes/booking'));
 app.use('/api/facility', isLoggedIn, require('./routes/facility'));
 app.use('/api/stats', isLoggedIn, require('./routes/stats'));
+app.use('/api/getname', isLoggedIn, require('./routes/getname'));
 // app.use('/api/booking', require('./routes/booking'));
 // app.use('/api/facility', require('./routes/facility'));
 // app.use('/api/stats', require('./routes/stats'));

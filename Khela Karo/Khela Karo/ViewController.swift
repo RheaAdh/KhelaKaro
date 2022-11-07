@@ -8,7 +8,6 @@
 
 import UIKit
 import FirebaseAuth
-import Firebase
 
 
 class ViewController: UIViewController {
@@ -48,7 +47,10 @@ class ViewController: UIViewController {
                 return
             }
             else {
-                self.getUser()
+                self.email.text = ""
+                self.password.text = ""
+                self.loginButton.isEnabled = true
+                self.loginButton.borderColor = UIColor(red: 0.741, green: 0.518, blue: 1.0, alpha: 1.0)
                 self.performSegue(withIdentifier: "loginSuccess", sender: self.loginButton)
             }
         }
@@ -78,25 +80,4 @@ class ViewController: UIViewController {
         isExpand = false
         //=======
     }
-        func getUser() {
-            guard let userID = Auth.auth().currentUser?.uid else { return }
-            let db = Firestore.firestore()
-            let users = db.collection("users")
-            let query = users.whereField("uid", isEqualTo: userID)
-            query.getDocuments(completion: {(querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    for document in querySnapshot!.documents {
-                        self.lastName = (document.data()["lastname"] as? String ?? nil)!
-                        self.firstName = (document.data()["firstname"] as? String ?? nil)!
-                        self.contactNo = (document.data()["phoneNo"] as? String ?? nil)!
-                        //print("\(firstName) => \(lastName)")
-                        //print("\(email)")
-                    }
-                }})
-            let constants = Constants(uid: userID, firstname: firstName, lastname: lastName, contactno: contactNo)
-            print("\(constants.uid), \(constants.firstname)")
-            //>>>>>>> refs/remotes/origin/master
-        }
     }

@@ -4,6 +4,7 @@ const Facility = require('../models/Facility');
 
 //hardcode using this in DB for Marena http://localhost:5000/api/facility/add
 router.post('/add', async (req, res) => {
+    console.log(req.body);
     try {
         const facility = new Facility({
             facilityId: req.body.facilityId,

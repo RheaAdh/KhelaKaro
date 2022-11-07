@@ -23,13 +23,11 @@
 		686A79CA2913DB70009BAB90 /* TennisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686A79C92913DB70009BAB90 /* TennisViewController.swift */; };
 		686A79CC2913DB7E009BAB90 /* TableTennisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686A79CB2913DB7E009BAB90 /* TableTennisViewController.swift */; };
 		686A79CE2913DB95009BAB90 /* GymViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686A79CD2913DB95009BAB90 /* GymViewController.swift */; };
-		68AA9F7529133E6100CF902E /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AA9F7429133E6100CF902E /* ExampleViewController.swift */; };
 		68F4605A291512F3006499EB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F46059291512F3006499EB /* ProfileViewController.swift */; };
 		6C167791C017CC1FA785B03E /* Pods_Khela_Karo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE290821A745610F964B0623 /* Pods_Khela_Karo.framework */; };
 		6F110E08290EBFCD00A09B68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F110E07290EBFCD00A09B68 /* GoogleService-Info.plist */; };
 		6F110E09290EBFCD00A09B68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F110E07290EBFCD00A09B68 /* GoogleService-Info.plist */; };
 		6F110E0A290EBFCD00A09B68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F110E07290EBFCD00A09B68 /* GoogleService-Info.plist */; };
-		6F21DB2A290FA3B400D3240A /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21DB29290FA3B400D3240A /* constants.swift */; };
 		6FF7421329057EB200153B70 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF7421229057EB200153B70 /* RegisterViewController.swift */; };
 		6FF7421529057F8C00153B70 /* SportList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF7421429057F8C00153B70 /* SportList.swift */; };
 		CE6F8F8FD06377A66888537A /* Pods_Khela_KaroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E259C2369F8195C6557E157 /* Pods_Khela_KaroTests.framework */; };
@@ -76,11 +74,9 @@
 		686A79C92913DB70009BAB90 /* TennisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisViewController.swift; sourceTree = "<group>"; };
 		686A79CB2913DB7E009BAB90 /* TableTennisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTennisViewController.swift; sourceTree = "<group>"; };
 		686A79CD2913DB95009BAB90 /* GymViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymViewController.swift; sourceTree = "<group>"; };
-		68AA9F7429133E6100CF902E /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		68F46059291512F3006499EB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6F110E07290EBFCD00A09B68 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6F15FC60C2659497D7FA32A3 /* Pods-Khela KaroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Khela KaroTests.debug.xcconfig"; path = "Target Support Files/Pods-Khela KaroTests/Pods-Khela KaroTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6F21DB29290FA3B400D3240A /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		6FF7421229057EB200153B70 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6FF7421429057F8C00153B70 /* SportList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportList.swift; sourceTree = "<group>"; };
 		8EEA24E374FB6974173B838E /* Pods-Khela KaroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Khela KaroTests.release.xcconfig"; path = "Target Support Files/Pods-Khela KaroTests/Pods-Khela KaroTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -179,8 +175,6 @@
 				2C7D5A0428F14A58001A36CD /* LaunchScreen.storyboard */,
 				6F110E07290EBFCD00A09B68 /* GoogleService-Info.plist */,
 				2C7D5A0728F14A58001A36CD /* Info.plist */,
-				6F21DB29290FA3B400D3240A /* constants.swift */,
-				68AA9F7429133E6100CF902E /* ExampleViewController.swift */,
 				686A79C52913DB3E009BAB90 /* BadmintonViewController.swift */,
 				686A79C72913DB55009BAB90 /* FootballViewController.swift */,
 				686A79C92913DB70009BAB90 /* TennisViewController.swift */,
@@ -456,7 +450,6 @@
 				686A79C62913DB3E009BAB90 /* BadmintonViewController.swift in Sources */,
 				2C7D59FA28F14A56001A36CD /* AppDelegate.swift in Sources */,
 				686A79CE2913DB95009BAB90 /* GymViewController.swift in Sources */,
-				6F21DB2A290FA3B400D3240A /* constants.swift in Sources */,
 				686A79C82913DB55009BAB90 /* FootballViewController.swift in Sources */,
 				6862CF55290C14BC0070E5A0 /* ViewExtensions.swift in Sources */,
 				686A79CC2913DB7E009BAB90 /* TableTennisViewController.swift in Sources */,
@@ -465,7 +458,6 @@
 				2C7D59FC28F14A56001A36CD /* SceneDelegate.swift in Sources */,
 				68F4605A291512F3006499EB /* ProfileViewController.swift in Sources */,
 				6FF7421329057EB200153B70 /* RegisterViewController.swift in Sources */,
-				68AA9F7529133E6100CF902E /* ExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
