@@ -35,6 +35,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var streakDays: UILabel!
     @IBOutlet weak var frequentSport: UILabel!
     
+    @IBOutlet var profileImageView: UIImageView!
     var bookingsArray = [Bookings]()
     
     func showConfirmLogoutMsg(){
@@ -94,19 +95,23 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             self.userName.text = result
         }
         fetchData(){
-            (result) in
+            (result, result2) in
             print(self.bookingsArray)
             self.myBookingsTableView.reloadData()
             self.frequentSport.text = result
+            self.changeImage(result: result)
+            
+            self.streakDays.text = String(result2)
         }
         
     }
     
-    private func fetchData(completion: @escaping (String) -> Void){
+    private func fetchData(completion: @escaping (String, Int) -> Void){
         let email = Auth.auth().currentUser?.email
         let parameters: [String: String] = ["email": email!]
         AF.request("https://khela-karo.herokuapp.com/api/stats/profile", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in
             var maxPlayed = ""
+            var length = 0
             if let data = response.data {
                 let newArray = data
                 do{
@@ -118,6 +123,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                         let tennis = message["s2"]
                         let tableTennis = message["s3"]
                         let football = message["s4"]
+                        length = badminton.count + tennis.count + tableTennis.count + football.count
                         if(badminton.count >= tennis.count && badminton.count >= tableTennis.count && badminton.count >= football.count){
                             maxPlayed = "Badminton"
                         }
@@ -194,10 +200,29 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                 }catch let jsonErr {
                     print(jsonErr)
                 }
-                completion(maxPlayed)
+                completion(maxPlayed, length)
             }
             
         }
         
+    }
+    
+    func changeImage(result:String){
+        switch result{
+        case "Badminton":
+            self.profileImageView.image = UIImage(named: "Badminton")
+        
+        case "Tennis":
+            self.profileImageView.image = UIImage(named: "Tennis")
+            
+        case "Table Tennis":
+            self.profileImageView.image = UIImage(named: "TableTennis")
+        
+        case "Football":
+            self.profileImageView.image = UIImage(named: "Football")
+            
+        default:
+            self.profileImageView.image = UIImage(named:"Gym")
+        }
     }
 }

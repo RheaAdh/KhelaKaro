@@ -22,12 +22,12 @@ class SportList: UIViewController {
             //            print("Response: \(response.result)")
             if let json = response.data {
                 //                print("json:\(json)")
-                let responseJSON = try! JSON(data: json)
-                let message = responseJSON["msg"].stringValue
-                if !message.isEmpty {
-                    print(message)
-                    result =  message
-                }
+                    let responseJSON = try! JSON(data: json)
+                    let message = responseJSON["msg"].stringValue
+                    if !message.isEmpty {
+                        print(message)
+                        result =  message
+                    }
             }
             completion(result)
         }
