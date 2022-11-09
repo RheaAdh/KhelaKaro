@@ -64,7 +64,7 @@ class FootballViewController: UIViewController {
                 bookCourt(facilityId: "4", startDateTime: dateInput, email: userEmail!) {
                     (result) in
                     if(result != ""){
-                        if result == "Booked court 1 successfully!" {
+                        if result.contains("successfully!") {
                             self.showErrorMsg(errorMsg: result, success: true) }
                         else {
                             self.showErrorMsg(errorMsg: result, success: false)
@@ -80,7 +80,7 @@ class FootballViewController: UIViewController {
         //declare parameter as a dictionary which contains string as key and value combination. considering inputs are valid
         var result = ""
         let parameters: [String: String] = ["facilityId": facilityId, "startDateTime": startDateTime, "email": email]
-        AF.request("http://localhost:5000/api/booking", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in
+        AF.request("https://khela-karo.herokuapp.com/api/booking", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in
 //            print("Response: \(response.result)")
             if let json = response.data {
 //                print("json:\(json)")

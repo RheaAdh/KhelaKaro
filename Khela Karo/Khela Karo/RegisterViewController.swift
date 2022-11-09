@@ -39,7 +39,7 @@ class RegisterViewController: UIViewController {
         //declare parameter as a dictionary which contains string as key and value combination. considering inputs are valid
 
         let parameters: [String: String] = ["firstName": firstName, "lastName": lastName, "email": email, "contactNumber": contactNumber]
-        AF.request("http://localhost:5000/api/auth/register", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in
+        AF.request("https://khela-karo.herokuapp.com/api/auth/register", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in
 //            print("Response: \(response.result)")
             if let json = response.data {
 //                print("json:\(json)")

@@ -11,7 +11,28 @@ import FirebaseAuth
 import Alamofire
 import SwiftyJSON
 
+// Custom protocol that parses the JSON and updated the arrray
+//protocol DataDelegate {
+//    func updateArray(newArray: String)
+//}
+//
 class ProfileViewController: UIViewController {
+//    class ProfileViewController: UIViewController, DataDelegate {
+//    func updateArray(newArray: String) {
+//        do{
+//            bookingsArray = try JSONDecoder().decode([Bookings].self,from: newArray.data(using: .utf8)!)
+////            let responseJSON = try! JSON(data: newArray)
+////            let message = responseJSON["data"].stringValue
+////            if !message.isEmpty {
+////                        print(message)
+////                }
+////            print(bookingsArray)
+//        }catch let jsonErr {
+//            print(jsonErr)
+//        }
+//        //self.tableView.reloadData()
+//    }
+//
     
     
     @IBOutlet weak var logoutButton: UIBarButtonItem!
@@ -20,6 +41,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var myBookingsTableView: UITableView!
     @IBOutlet weak var streakDays: UILabel!
     @IBOutlet weak var frequentSport: UILabel!
+    
+    var bookingsArray = [Bookings]()
     
     func showConfirmLogoutMsg(){
         let alert = UIAlertController(title: "Confirm", message: "Are you sure you want to logout?", preferredStyle: .alert)
@@ -52,7 +75,7 @@ class ProfileViewController: UIViewController {
         //declare parameter as a dictionary which contains string as key and value combination. considering inputs are valid
         var result = ""
         let parameters: [String: String] = ["email": email]
-        AF.request("http://localhost:5000/api/getname", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in
+        AF.request("https://khela-karo.herokuapp.com/api/getname", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in
 //            print("Response: \(response.result)")
             if let json = response.data {
 //                print("json:\(json)")
@@ -70,6 +93,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.userEmail.text = Auth.auth().currentUser?.email!
+//        APIMethods.functions.delegate = self
         getName(email: self.userEmail.text!) {
             (result) in
             self.userName.text = result
@@ -77,5 +101,25 @@ class ProfileViewController: UIViewController {
 
     }
     
+//    // Everytime the list of notes is shown, update the array of notes and the tableview
+//    override func viewWillAppear(_ animated: Bool) {
+//        APIMethods.functions.fetchData()
+//        //self.tableView.reloadData()
+//    }
+    
 
 }
+
+//extension ViewController: DataDelegate {
+//
+//    // Get data from the API call and parse it
+//    func updateArray(newArray: String) {
+//        do{
+//            notesArray = try JSONDecoder().decode([Notes].self,from: newArray.data(using: .utf8)!)
+//        }catch let jsonErr {
+//            print(jsonErr)
+//        }
+//        self.tableView.reloadData()
+//    }
+//
+//}
