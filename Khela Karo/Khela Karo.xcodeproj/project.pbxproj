@@ -31,9 +31,9 @@
 		6F2E4062291A794A007E3188 /* OpenSans-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F2E4061291A794A007E3188 /* OpenSans-VariableFont_wdth,wght.ttf */; };
 		6F2E4063291A794A007E3188 /* OpenSans-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F2E4061291A794A007E3188 /* OpenSans-VariableFont_wdth,wght.ttf */; };
 		6F2E4064291A794A007E3188 /* OpenSans-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F2E4061291A794A007E3188 /* OpenSans-VariableFont_wdth,wght.ttf */; };
-		6F2E4066291B4DE3007E3188 /* CoreDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2E4065291B4DE3007E3188 /* CoreDataFunctions.swift */; };
-		6F2E4067291B4DE3007E3188 /* CoreDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2E4065291B4DE3007E3188 /* CoreDataFunctions.swift */; };
-		6F2E4068291B4DE3007E3188 /* CoreDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2E4065291B4DE3007E3188 /* CoreDataFunctions.swift */; };
+		6F2E406A291B75E8007E3188 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2E4069291B75E8007E3188 /* TableViewCell.swift */; };
+		6F2E406B291B75E8007E3188 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2E4069291B75E8007E3188 /* TableViewCell.swift */; };
+		6F2E406C291B75E8007E3188 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2E4069291B75E8007E3188 /* TableViewCell.swift */; };
 		6FF7421329057EB200153B70 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF7421229057EB200153B70 /* RegisterViewController.swift */; };
 		6FF7421529057F8C00153B70 /* SportList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF7421429057F8C00153B70 /* SportList.swift */; };
 		CE6F8F8FD06377A66888537A /* Pods_Khela_KaroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E259C2369F8195C6557E157 /* Pods_Khela_KaroTests.framework */; };
@@ -84,7 +84,7 @@
 		6F110E07290EBFCD00A09B68 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6F15FC60C2659497D7FA32A3 /* Pods-Khela KaroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Khela KaroTests.debug.xcconfig"; path = "Target Support Files/Pods-Khela KaroTests/Pods-Khela KaroTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F2E4061291A794A007E3188 /* OpenSans-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; };
-		6F2E4065291B4DE3007E3188 /* CoreDataFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFunctions.swift; sourceTree = "<group>"; };
+		6F2E4069291B75E8007E3188 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		6FF7421229057EB200153B70 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6FF7421429057F8C00153B70 /* SportList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportList.swift; sourceTree = "<group>"; };
 		8EEA24E374FB6974173B838E /* Pods-Khela KaroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Khela KaroTests.release.xcconfig"; path = "Target Support Files/Pods-Khela KaroTests/Pods-Khela KaroTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 				686A79CB2913DB7E009BAB90 /* TableTennisViewController.swift */,
 				686A79CD2913DB95009BAB90 /* GymViewController.swift */,
 				68F46059291512F3006499EB /* ProfileViewController.swift */,
-				6F2E4065291B4DE3007E3188 /* CoreDataFunctions.swift */,
+				6F2E4069291B75E8007E3188 /* TableViewCell.swift */,
 			);
 			path = "Khela Karo";
 			sourceTree = "<group>";
@@ -466,11 +466,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F2E406A291B75E8007E3188 /* TableViewCell.swift in Sources */,
 				2C7D59FE28F14A56001A36CD /* ViewController.swift in Sources */,
 				686A79CA2913DB70009BAB90 /* TennisViewController.swift in Sources */,
 				686A79C62913DB3E009BAB90 /* BadmintonViewController.swift in Sources */,
 				2C7D59FA28F14A56001A36CD /* AppDelegate.swift in Sources */,
-				6F2E4066291B4DE3007E3188 /* CoreDataFunctions.swift in Sources */,
 				686A79CE2913DB95009BAB90 /* GymViewController.swift in Sources */,
 				686A79C82913DB55009BAB90 /* FootballViewController.swift in Sources */,
 				6862CF55290C14BC0070E5A0 /* ViewExtensions.swift in Sources */,
@@ -487,7 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F2E4067291B4DE3007E3188 /* CoreDataFunctions.swift in Sources */,
+				6F2E406B291B75E8007E3188 /* TableViewCell.swift in Sources */,
 				2C7D5A1128F14A58001A36CD /* Khela_KaroTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,7 +496,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F2E4068291B4DE3007E3188 /* CoreDataFunctions.swift in Sources */,
+				6F2E406C291B75E8007E3188 /* TableViewCell.swift in Sources */,
 				2C7D5A1C28F14A58001A36CD /* Khela_KaroUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
